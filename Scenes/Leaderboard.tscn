@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2rf44viogwgf"]
+
+[ext_resource type="Script" uid="uid://bjanu5ofkx8yk" path="res://Scripts/leaderboard.gd" id="1_qaei5"]
+[ext_resource type="Texture2D" uid="uid://dbyuumlqdk5v0" path="res://Assets/Fleeb_Leaderboard.png" id="2_ldouh"]
+[ext_resource type="FontFile" uid="uid://cnwxvegiklarr" path="res://Assets/m5x7.ttf" id="3_ldouh"]
+[ext_resource type="PackedScene" uid="uid://dgygkbtm0burn" path="res://addons/quiver_leaderboards/leaderboard_ui.tscn" id="4_67k4m"]
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qaei5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="FleebsSquasherLeaderboard" type="Sprite2D" parent="."]
+texture = ExtResource("2_ldouh")
+centered = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 239.0
+offset_right = 820.0
+offset_bottom = 293.0
+
+[node name="Highscore" type="RichTextLabel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.988235, 0.843137, 0.341176, 1)
+theme_override_fonts/normal_font = ExtResource("3_ldouh")
+theme_override_font_sizes/normal_font_size = 30
+text = "HIGHEST SCORE:
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player_Name_Text" type="LineEdit" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.988235, 0.843137, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_ldouh")
+theme_override_font_sizes/font_size = 30
+placeholder_text = "ENTER NAME"
+alignment = 1
+max_length = 8
+
+[node name="SubmitButton" type="Button" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.988235, 0.843137, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_ldouh")
+theme_override_font_sizes/font_size = 30
+text = "SUBMIT HIGHSCORE"
+
+[node name="Back" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.988235, 0.843137, 0.341176, 1)
+theme_override_fonts/font = ExtResource("3_ldouh")
+theme_override_font_sizes/font_size = 30
+text = "GO BACK"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 296.0
+offset_right = 920.0
+offset_bottom = 552.0
+
+[node name="LeaderboardUI" parent="VBoxContainer" instance=ExtResource("4_67k4m")]
+layout_mode = 2
+leaderboard_id = "fleeb-match-main-rgkr"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_submitted" from="HBoxContainer/Player_Name_Text" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="HBoxContainer/SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]

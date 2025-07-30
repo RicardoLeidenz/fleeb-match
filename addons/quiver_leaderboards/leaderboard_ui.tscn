@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgygkbtm0burn"]
+
+[ext_resource type="Script" uid="uid://di2oopi81j4v6" path="res://addons/quiver_leaderboards/leaderboard_ui.gd" id="1_3mlof"]
+[ext_resource type="FontFile" uid="uid://cnwxvegiklarr" path="res://Assets/m5x7.ttf" id="2_pp1k2"]
+
+[node name="LeaderboardUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_3mlof")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Nav" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PrevButton" type="Button" parent="PanelContainer/VBoxContainer/Nav"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = " < "
+
+[node name="ScoresLabel" type="Label" parent="PanelContainer/VBoxContainer/Nav"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+theme_override_fonts/font = ExtResource("2_pp1k2")
+theme_override_font_sizes/font_size = 70
+text = "Scores"
+horizontal_alignment = 1
+
+[node name="NextButton" type="Button" parent="PanelContainer/VBoxContainer/Nav"]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = " > "
+
+[node name="ScoreList" type="Tree" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_pp1k2")
+columns = 3
+column_titles_visible = true
+allow_search = false
+hide_folding = true
+hide_root = true
+select_mode = 1
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Nav/PrevButton" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Nav/NextButton" to="." method="_on_next_button_pressed"]

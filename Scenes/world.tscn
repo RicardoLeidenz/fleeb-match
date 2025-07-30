@@ -1,0 +1,568 @@
+[gd_scene load_steps=26 format=3 uid="uid://drw80l0e3g7oh"]
+
+[ext_resource type="Script" uid="uid://dos4xku5xi168" path="res://Scripts/world.gd" id="1_0fj1v"]
+[ext_resource type="Texture2D" uid="uid://bj4ggg8aso8t0" path="res://Assets/Background.jpg" id="2_7yui6"]
+[ext_resource type="Texture2D" uid="uid://pbk4jriu1aov" path="res://Assets/Board.png" id="2_ikia7"]
+[ext_resource type="Texture2D" uid="uid://b4m6nwdnto622" path="res://Assets/Icons/Fleeb_80.png" id="3_7yui6"]
+[ext_resource type="Texture2D" uid="uid://1mri2wm8pxxi" path="res://Assets/Icons/Cactus_80.png" id="4_c5t2i"]
+[ext_resource type="Texture2D" uid="uid://c2r7rmloy6wmr" path="res://Assets/Icons/Fleeb_blue_80-export.png" id="5_e0ngr"]
+[ext_resource type="Texture2D" uid="uid://camrgv157nwd2" path="res://Assets/Icons/Fleeb_red_80-export.png" id="6_kn0ld"]
+[ext_resource type="Texture2D" uid="uid://cwerl7sguhbab" path="res://Assets/Icons/Saw_80.png" id="7_hgpy0"]
+[ext_resource type="Texture2D" uid="uid://7cpsrn4xnayk" path="res://Assets/Icons/Fleeb_white_80.png" id="8_t2t4p"]
+[ext_resource type="Texture2D" uid="uid://ljfcr34pcw3r" path="res://Assets/Icons/Alien_black_80-export.png" id="9_0pcbe"]
+[ext_resource type="Texture2D" uid="uid://dxf53fx2a8lc8" path="res://Assets/Icons/Alien_80.png" id="10_axeuq"]
+[ext_resource type="FontFile" uid="uid://cnwxvegiklarr" path="res://Assets/m5x7.ttf" id="12_7yui6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dwbse"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pkg7o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gbfbk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ioo17"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wse8f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ic0uy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k3n1d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2o6r5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_70uel"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hiqwa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2u3nc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5t2i"]
+bg_color = Color(1, 0.905882, 0.580392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yui6"]
+bg_color = Color(0.988235, 0.843137, 0.341176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_0fj1v")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(1.84444, 1.84444)
+texture = ExtResource("2_7yui6")
+centered = false
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(252, 0)
+scale = Vector2(20.25, 20.25)
+texture = ExtResource("2_ikia7")
+centered = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 336.0
+offset_top = 88.0
+offset_right = 816.0
+offset_bottom = 560.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="A1" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/A1"]
+unique_name_in_owner = true
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="A2" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("4_c5t2i")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/A2"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="A3" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("5_e0ngr")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/A3"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="A4" type="Button" parent="VBoxContainer/HBoxContainer" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("6_kn0ld")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer/A4"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="B1" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("7_hgpy0")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/B1"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="B2" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("8_t2t4p")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/B2"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="B3" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("9_0pcbe")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/B3"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="B4" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("10_axeuq")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer2/B4"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="C1" type="Button" parent="VBoxContainer/HBoxContainer3" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/C1"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="C2" type="Button" parent="VBoxContainer/HBoxContainer3" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/C2"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="C3" type="Button" parent="VBoxContainer/HBoxContainer3" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/C3"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="C4" type="Button" parent="VBoxContainer/HBoxContainer3" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer3/C4"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="D1" type="Button" parent="VBoxContainer/HBoxContainer4" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/D1"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="D2" type="Button" parent="VBoxContainer/HBoxContainer4" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/D2"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="D3" type="Button" parent="VBoxContainer/HBoxContainer4" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/D3"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="D4" type="Button" parent="VBoxContainer/HBoxContainer4" groups=["Card"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dwbse")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_pkg7o")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_gbfbk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ioo17")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wse8f")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ic0uy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_k3n1d")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_2o6r5")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_70uel")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_hiqwa")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2u3nc")
+icon = ExtResource("3_7yui6")
+icon_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer/HBoxContainer4/D4"]
+position = Vector2(56, 56)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("2_ikia7")
+
+[node name="Time" type="Label" parent="."]
+offset_top = 288.0
+offset_right = 240.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(1, 0.65098, 0.0980392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_7yui6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_c5t2i")
+text = "TIME: 45"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="Time"]
+wait_time = 45.0
+one_shot = true
+
+[node name="Points" type="Label" parent="."]
+offset_left = 912.0
+offset_top = 288.0
+offset_right = 1152.0
+offset_bottom = 368.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.635294, 0.0627451, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_7yui6")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_c5t2i")
+text = "POINTS:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit" type="Button" parent="."]
+offset_top = 288.0
+offset_right = 240.0
+offset_bottom = 368.0
+theme_override_colors/font_color = Color(1, 0.607843, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.76897, 0.540142, 1)
+theme_override_colors/font_pressed_color = Color(0.658665, 0.393387, 0, 1)
+theme_override_fonts/font = ExtResource("12_7yui6")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7yui6")
+text = "EXIT"
+
+[node name="GameOverUI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 252.0
+offset_right = 900.0
+offset_bottom = 647.0
+
+[node name="Board" type="Sprite2D" parent="GameOverUI"]
+scale = Vector2(20.25, 20.25)
+texture = ExtResource("2_ikia7")
+centered = false
+
+[node name="GameOverLabel" type="Label" parent="GameOverUI"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 107.0
+offset_right = 570.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(1, 0.607843, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_7yui6")
+theme_override_font_sizes/font_size = 140
+text = "GAME OVER"
+
+[node name="GameOverPoints" type="Label" parent="GameOverUI"]
+offset_left = 83.0
+offset_top = 250.0
+offset_right = 565.0
+offset_bottom = 340.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.635294, 0.0627451, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("12_7yui6")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_c5t2i")
+text = "SCORE: 00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayAgain" type="Button" parent="GameOverUI"]
+offset_left = 196.0
+offset_top = 368.0
+offset_right = 491.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(1, 0.607843, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.76897, 0.540142, 1)
+theme_override_colors/font_pressed_color = Color(0.658665, 0.393387, 0, 1)
+theme_override_fonts/font = ExtResource("12_7yui6")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7yui6")
+text = "PLAY AGAIN"
+
+[node name="Exit" type="Button" parent="GameOverUI"]
+offset_left = 220.0
+offset_top = 473.0
+offset_right = 460.0
+offset_bottom = 553.0
+theme_override_colors/font_color = Color(1, 0.607843, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0.76897, 0.540142, 1)
+theme_override_colors/font_pressed_color = Color(0.658665, 0.393387, 0, 1)
+theme_override_fonts/font = ExtResource("12_7yui6")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/hover = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_7yui6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7yui6")
+text = "EXIT"
+
+[connection signal="timeout" from="Time/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="GameOverUI/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="GameOverUI/Exit" to="." method="_on_exit_pressed"]

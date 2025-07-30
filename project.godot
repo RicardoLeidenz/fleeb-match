@@ -1,0 +1,38 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Fleeb Match"
+run/main_scene="uid://kehjy684nawp"
+config/features=PackedStringArray("4.4", "Mobile")
+
+[autoload]
+
+Global="*res://Scripts/Global.gd"
+Leaderboards="*res://addons/quiver_leaderboards/leaderboards.tscn"
+PlayerAccounts="*res://addons/quiver_player_accounts/player_accounts.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/quiver_leaderboards/plugin.cfg", "res://addons/quiver_player_accounts/plugin.cfg")
+
+[quiver]
+
+general/auth_token="QbVHBlDueA4nNdJnxVW6pdniYOXeOfehXWoNjebr"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="mobile"
