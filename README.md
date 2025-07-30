@@ -1,4 +1,5 @@
-# Welcome to FLEEB MATCH — ## the fast, fun, and addictive memory game that keeps you coming back for more!
+# Welcome to FLEEB MATCH
+### The fast, fun, and addictive memory game that keeps you coming back for more!
 
 Sharpen your mind and test your reflexes in two exciting game modes:
 
