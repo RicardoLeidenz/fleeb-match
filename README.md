@@ -12,3 +12,4 @@ Race against the clock with only 45 seconds to rack up the highest score you can
 Think fast. Match faster.
 Can you become the top Fleeb Matcher?
 
+**Go play it at https://rialz151.itch.io/fleeb-match**
